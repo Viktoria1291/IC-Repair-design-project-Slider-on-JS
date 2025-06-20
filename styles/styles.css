@@ -24,19 +24,35 @@
 
 .container {
     margin: 0 auto;
-    max-width: 1440px;
+    width: 1256px;
 }
 
 .header {
-    background: #131313;
+    background-color: rgba(19, 19, 19, 1);
+    transition: all 0.3s ease; 
+}
+
+.header.scrolled {
+    background-color: rgba(19, 19, 19, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transform: translateY(0); 
 }
 
 .header-content {
-    max-width: 1256px;
     height: 83px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.header-content a,
+.footer-content a {
+    margin: 0;
 }
 
 .logo {
@@ -46,28 +62,27 @@
     font-size: 11px;
     line-height: 15px;
     text-transform: uppercase;
+    margin: 0;
 }
 
-.header nav ul li {
+.nav-links {
+    margin: 0;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    text-transform: uppercase;
     font-family: 'Nunito_Sans_Regular';
     font-weight: 400;
     font-size: 11px;
     line-height: 15px;
     color: #FFFFFF;
-    list-style-type: none;
 }
 
-.header nav ul {
-    display: flex;
-    letter-spacing: 1.2px;
-}
-
-.header nav ul li a {
-    color: #FFFFFF;
-    margin-right: 47.09px;
-}
-
-.header nav ul li a:hover {
+.nav-links a:hover {
     color: #E3B873;
 }
 
@@ -80,6 +95,7 @@
     text-decoration-line: underline;
     color: #E3B873;
     letter-spacing: 1.2px;
+    margin: 0;
 }
 
 .button {
@@ -87,22 +103,22 @@
     border-radius: 2px;
     font-weight: 400;
     text-align: center;
-    color: #FFFFFF;
+    color: #FFFFFF;    
 }
 
 .header-button {
     width: 161px;
-    height: 37px;
+    height: 51px;
     background: #E3B873;
     box-shadow: 0px 5px 15px rgba(227, 184, 115, 0.2);
     border-style: none;
-    margin-right: 1px;
     font-size: 11px;
     line-height: 15px;
     font-family: 'Nunito_Sans_Italic';
 
     text-transform: uppercase;
     letter-spacing: 1.1px;
+    margin: 0;
 }
 
 
@@ -129,7 +145,6 @@
     position: relative;
     z-index: 1;
     padding-top: 194px;
-    padding-left: 134px;
 }
 
 .title {
@@ -182,14 +197,30 @@
 
 .completed_projects {
     background-color: #131313;
-    height: 1074px;
+    height: 1074px;    
+}
+
+.cp-content {
+    position: relative;
 }
 
 .titles {
     padding-top: 107px;
-    padding-left: 600px;
-    padding-right: 150px;
+    justify-content: space-between;
+    margin-right: 56px;
     display: flex;
+    width: 623px;
+}
+
+.cp_text {
+    padding-top: 45px;       
+    display: flex;    
+    flex-direction: column; 
+    margin: 0; 
+}
+
+.card {
+    margin: 0;
 }
 
 .title_ob {
@@ -199,7 +230,7 @@
     line-height: 19px;
     text-transform: uppercase;
     cursor: pointer;
-
+    margin: 0;
     color: rgba(255, 255, 255, 0.3);
 }
 
@@ -208,16 +239,6 @@
     border-bottom: 1px #E3B873 solid;
     padding-bottom: 6px;
     color: #E3B873;
-}
-
-.about_pj1 {
-    display: flex;
-    padding-top: 48px;
-    padding-left: 134px;
-}
-
-.about {
-    margin: 0;
 }
 
 .subtitle_h2 {
@@ -231,6 +252,7 @@
 
 .subtitle_pj1 {
     letter-spacing: -0.07em;
+    margin: 0;
 }
 
 .text_pj1 {
@@ -239,13 +261,14 @@
     font-size: 14px;
     line-height: 27px;
     color: #FFFFFF;
-    margin-top: 25px;
+    padding-top: 34px;
     width: 442px;
-    height: 86px;
+    height: auto;
+    margin: 0;
 }
 
-.completed_pj_mob {
-    display: none;
+.imgs {
+    
 }
 
 .arrows_cp {
@@ -313,16 +336,17 @@
 }
 
 .subsubtitle_info>* {
-    /* > означает, что это свойство будет применятся ко всем дочерним элементам класса .subsubtitle_info, т.е. ко всем четырем блокам */
     margin: 0;
 }
 
 .slider__images {
     width: 679px;
     height: 482px;
-    margin-left: 55px;
+    margin-right: 0;
     filter: drop-shadow(0px 50px 30px rgba(0, 0, 0, 0.15));
-    position: relative;
+    position: absolute;
+    top: 176px;
+    right: 0;
 }
 
 .slider__images .image {
@@ -367,17 +391,21 @@
 
 .online_control {
     background-color: #FFFFFF;
-    height: 631px;
+    height: 640px;
 }
 
 .online_control-content {
-    max-width: 1263px;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     position: relative;
-    top: -324px;
+    top: -390px;
+}
+
+.subtitle_h3-OC {
+    color: #FFFFFF;
+    margin-top: 75px;
 }
 
 .camera {
@@ -387,14 +415,12 @@
 .repair {
     height: 434px;
     width: 817px;
-
-    margin-top: 27px;
     padding: 0;
 }
 
 .repair-overlay {
     position: absolute;
-    top: 98px;
+    top: 181px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -432,7 +458,7 @@
 
 .button_play {
     position: absolute;
-    top: 270px;
+    top: 350px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -454,9 +480,16 @@
 
 .form_online-control {
     display: flex;
+    flex-direction: column;
     margin-top: 80px;
     justify-content: space-between;
-    width: 769px;
+    width: 769px;    
+}
+
+.without_checkbox {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
     height: 51px;
 }
 
@@ -487,19 +520,17 @@
     width: 231px;
     border-bottom: 1px rgba(54, 54, 54, 0.3) solid;
     padding-bottom: 6px;
+    position: relative;
 }
 
 .input {
     border-style: none;
     cursor: pointer;
-}
-
-.input_oc {
-    width: 100px;
+    color: #E3B873;
 }
 
 .button_online-control {
-    height: 51px;
+    height: 100%;
     width: 200px;
     border-style: none;
     background: #E3B873;
@@ -526,12 +557,12 @@
 
 .fake {
     display: inline-flex;
-    /* выстраивает галочку и текст в одну линию, нижний край у обоих элементов идет вровень друг с другом */
     width: 18px;
     height: 18px;
     background: #E3B873;
     color: #FFFFFF;
     justify-content: center;
+    align-items: center;
 }
 
 .text_checkbox {
@@ -546,17 +577,12 @@
 }
 
 .fake::before {
-    /* создается псевдоэлемент fake */
     content: "\2714";
-    /* цифры - это спецсимвол, обозначающий галочку */
     opacity: 0;
-    /*указывает на то, что элемент галочка изначально является прозрачным*/
     transition: 0.2s;
-    /*через какое время появиться галочка */
 }
 
 .checkbox:checked+.fake::before {
-    /* Сразу после нажатия (:checked) на чек-бокс для селектора .fake::before начинает применятся новое свойство opacity: 1; */
     opacity: 1;
 }
 
@@ -569,7 +595,6 @@
 }
 
 .TYPES_OF_REPAIR-content {
-    max-width: 1263px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -597,7 +622,7 @@
     margin-top: 31px;
     display: flex;
     justify-content: space-between;
-    width: 1236px;
+    width: 100%;
     height: 628px;
 }
 
@@ -628,7 +653,6 @@
     line-height: 27px;
     color: #959595;
     padding-top: 13px;
-    list-style-type: none;
     padding-left: 34px;
 }
 
@@ -664,12 +688,13 @@
     background-image: url('../images/about_measuring.jpg');
     background-repeat: no-repeat;
     background-position: 0px 124px;
+    justify-content: space-between;
 }
 
 .about_measuring {
     margin: 0;
     padding-top: 223px;
-    padding-left: 190px;
+    padding-left: 146px;
 }
 
 .step {
@@ -705,13 +730,12 @@
 }
 
 .all_steps {
-    padding-bottom: 100px;
+    padding-bottom: 95px;
 }
 
 
 .form_departure {
     margin: 0;
-    padding-left: 100px;
 }
 
 .form_Call_the_measurer {
@@ -732,7 +756,7 @@
     text-align: center;
     color: #FFFFFF;
     margin-top: 27px;
-
+    width: 50%;
 }
 
 .title_lable-departure {
@@ -751,13 +775,13 @@
 
     border-bottom: 1px rgba(255, 255, 255, 0.15) solid;
     padding-bottom: 6px;
+    position: relative;
 
 }
 
 .input_dep {
     background-color: #131313;
     width: 250px;
-    margin-left: 5px;
 }
 
 .checkbox-dep {
@@ -783,7 +807,7 @@
     height: 51px;
 
     margin-top: 26px;
-    margin-left: 240px;
+    margin-left: 245px;
 }
 
 
@@ -833,12 +857,13 @@
 
 .repair_styles-content {
     display: flex;
+    justify-content: space-between;
 }
 
 .repair_styles-text {
     z-index: 1;
-    margin-top: 100px;
-    margin-left: 99px;
+    padding-top: 100px;
+    margin: 0;
 }
 
 .repair_styles-text ul {
@@ -871,7 +896,7 @@
     column-gap: 43px;
     position: relative;
     z-index: 1;
-    margin-right: 102px;
+    margin: 0;
 }
 
 .img_clock {
@@ -890,7 +915,7 @@
     margin-top: -315px;
 }
 
-.img_clock-big {
+.repair_styles-images_container {
     display: none;
 }
 
@@ -901,13 +926,10 @@
     background-color: #FFFFFF;
     background-image: url('../images/background-clients.png');
     background-position: bottom;
-    /*фоновую картинку располагаю внизу этого контейнера */
     background-repeat: repeat-x;
-    /*фон повторяется по горизонтали*/
 }
 
 .clients-content {
-    max-width: 1236px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -930,19 +952,22 @@
 .about_clients {
     display: flex;
     justify-content: space-between;
-    margin-top: 39px;
-
-    width: 1236px;
+    padding-top: 39px;
+    margin: 0;
     height: 455px;
+    width: 100%;
 }
 
 .client {
     width: 376px;
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .person {
     display: flex;
+    margin: 0;
 }
 
 .person img {
@@ -955,13 +980,10 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 23px;
-
     color: #181818;
     text-align: left;
-
     width: 178px;
     height: 42px;
-
     margin-left: 23px;
     margin-top: 15px;
 
@@ -972,21 +994,17 @@
     font-weight: 400;
     font-size: 13px;
     line-height: 23px;
-
     color: #959595;
-
     text-align: left;
-
-    margin-top: 22px;
-    margin-left: 20px;
-
+    padding-top: 22px;
+    margin: 0;
     width: 324px;
     height: 216px;
 }
 
 .client-data {
-    margin-top: 50px;
-    margin-left: -20px;
+    padding-top: 50px;
+    margin: 0 0 0 -20px;
 }
 
 
@@ -1037,6 +1055,7 @@
 
 .title_lable-cont {
     color: rgba(255, 255, 255, 0.5);
+    width: 45%;
 }
 
 .subtitle_lable-cont {
@@ -1046,10 +1065,10 @@
     border-bottom: 1px rgba(255, 255, 255, 0.15) solid;
     padding-bottom: 6px;
     margin-bottom: 42px;
+    position: relative;
 }
 
 .input-cont-name-phone {
-    width: 100px;
     background-color: #181818;
 }
 
@@ -1141,7 +1160,6 @@
 }
 
 .footer-content {
-    max-width: 1256px;
     height: 133px;
     display: flex;
     justify-content: space-between;
@@ -1174,46 +1192,101 @@
 
 
 
-@media (min-width: 1237px) and (max-width: 1325px) {
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: none;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 40px;
+    z-index: 1001;
+    border-radius: 5px;
+    display: none;
+    width: 90%;
+    max-width: 500px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+
+@media (min-width: 1237px) and (max-width: 1439px) {
+
+    .container {
+        margin: 0 auto;
+        width: 1190px;
+    }
+
+    .hero-content {
+        padding-left: 0;
+    }
 
     .header-content {
         max-width: 1190px;
     }
 
     .header-button {
-        margin-left: 30px;
+        height: 40px;
+    }
+
+    .without_checkbox {
+        height: 40px;
     }
 
     .titles {
-        padding-left: 608px;
-        padding-right: 100px;
+        margin-right: 129px;
+        width: 550px;
     }
 
     .title_ob {
         font-size: 11px;
     }
 
+    .hero-button_left, .hero-button_right1, .hero-button_right2 {
+        height: 40px;
+    }
+
     .slider__images {
-        width: 581px;
-        height: 382px;
-        /* делаю так, чтобы картинка не выезжала за пределы сайта */
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .button_departure {
+        height: 40px;
+        margin-top: 31px;
     }
 
     .about_measuring {
-        padding-left: 150px;
-    }
-
-    .repair_styles-text {
-        padding-left: 80px;
-    }
-
-    .repair_styles-images {
-        margin-right: 50px;
+        padding-left: 140px;
     }
 
     .about_clients {
         width: 1190px;
         height: 455px;
+    }
+
+    .button_cont {
+        height: 40px;
     }
 
     .footer-content {
@@ -1226,31 +1299,29 @@
 @media (min-width: 1024px) and (max-width: 1236px) {
 
     .container {
-        max-width: 975px;
+        width: 975px;
     }
 
-    .header-content {
-        max-width: 975px;
+    .logo {
+        width: 100px;
     }
 
-    .header nav ul li a {
-        margin-right: 20px;
+    .nav-links {
+        gap: 12px;
     }
 
     .header-button {
         width: 129px;
-        height: 30px;
+        height: 40px;
         font-size: 9px;
-        margin-left: 20px;
     }
 
     .hero-content {
         padding-top: 170px;
-        padding-left: 90px;
     }
 
-    .about_pj1 {
-        padding-left: 90px;
+    .hero-button_left, .hero-button_right1, .hero-button_right2 {
+        height: 40px;
     }
 
     .text_pj1 {
@@ -1263,8 +1334,8 @@
     }
 
     .titles {
-        padding-left: 495px;
-        padding-right: 0;
+        width: 477px;
+        margin-right: 0;
     }
 
     .title_ob {
@@ -1274,11 +1345,9 @@
     .slider__images {
         width: 477px;
         height: 314px;
-        /* делаю так, чтобы картинка не выезжала за пределы сайта */
     }
 
     .three_types {
-        width: 989px;
         height: 502px;
     }
 
@@ -1287,13 +1356,24 @@
         height: 337px;
     }
 
+    .without_checkbox {
+        height: 40px;
+    }
+
     .about_type {
         width: 264px;
         height: 229px;
     }
 
+    .button_departure {
+        height: 40px;
+        margin-top: 31px;
+        margin-left: 217px;
+        font-size: 12px;
+    }
+
     .about_measuring {
-        padding-left: 90px;
+        padding-left: 10px;
     }
 
     .all_steps {
@@ -1302,14 +1382,7 @@
 
     .form_Call_the_measurer {
         width: 480px;
-    }
-
-    .form_departure {
-        padding-left: 15px;
-    }
-
-    .repair_styles-text {
-        margin-left: 66px;
+        height: 507px;
     }
 
     .repair_styles-text .subtitle_h2 {
@@ -1324,13 +1397,13 @@
     .img_clock {
         width: 283px;
         height: 446px;
-        margin-top: 50px;
+        margin-top: 60px;
     }
 
     .img_sofa {
         width: 283px;
         height: 220px;
-        margin-top: 20px;
+        margin-top: 30px;
     }
 
     .img_tv {
@@ -1346,11 +1419,9 @@
 
     .repair_styles-images {
         grid-template-columns: 283px 283px;
-        margin-right: 20px;
     }
 
     .about_clients {
-        width: 989px;
         height: 364px;
     }
 
@@ -1363,15 +1434,17 @@
     }
 
     .client-data {
-        margin-top: 15px;
-    }
-
-    .footer-content {
-        max-width: 975px;
+        margin: 0 0 0 -16px;
     }
 
     .footer nav ul li a {
         margin-right: 20px;
+    }
+
+    .map {
+        width: 100%;
+        height: auto;
+        margin: 43px 0 0 0;
     }
 }
 
@@ -1379,10 +1452,19 @@
 
 @media (min-width: 768px) and (max-width: 1023px) {
     .header-content {
-        max-width: 720px;
+        width: 720px;
     }
 
     .logo {
+        font-size: 8px;
+        width: 75px;
+    }
+
+    .nav-links {
+        gap: 8px;        
+    }
+
+    .nav-links a {
         font-size: 8px;
     }
 
@@ -1390,30 +1472,20 @@
         max-width: 720px;
     }
 
-    .header nav ul li {
-        font-size: 8px;
-    }
-
-    .header nav ul li a {
-        margin-right: 20px;
-    }
-
     .contacts {
         font-size: 8px;
     }
 
     .header-button {
-        width: 60px;
-        height: 40px;
+        width: 100px;
         font-size: 8px;
-        margin-left: 20px;
+        height: 30px;
     }
 
 
 
     .hero-content {
         padding-top: 170px;
-        padding-left: 66px;
     }
 
     .hero-content .title {
@@ -1425,8 +1497,8 @@
         font-size: 18px;
     }
 
-    .about_pj1 {
-        padding-left: 66px;
+    .hero-button_left, .hero-button_right1, .hero-button_right2 {
+        height: 30px;
     }
 
     .text_pj1 {
@@ -1443,22 +1515,19 @@
     }
 
     .titles {
-        padding-left: 400px;
-        padding-right: 0;
+        width: 400px;
+        margin-right: 0;
     }
 
     .title_ob {
         padding-right: 20px;
-    }
-
-    .title_ob {
+        padding-bottom: 4px;
         font-size: 10px;
     }
 
     .slider__images {
-        width: 301px;
-        height: 199px;
-        /* делаю так, чтобы картинка не выезжала за пределы сайта */
+        width: 400px;
+        height: 264px;
     }
 
     .online_control-content {
@@ -1476,7 +1545,7 @@
     }
 
     .button_play {
-        top: 230px;
+        top: 315px;
         width: 60px;
         height: 60px;
     }
@@ -1487,7 +1556,12 @@
     }
 
     .form_online-control {
-        width: 700px;
+        width: 100%;
+        margin: 80px 0 0 0;
+    }
+
+    .without_checkbox {
+        height: 30px;
     }
 
     .three_types {
@@ -1533,12 +1607,9 @@
         width: 300px;
     }
 
-    .form_departure {
-        padding-left: 30px;
-    }
-
     .form_Call_the_measurer {
-        width: 325px;
+        width: 360px;
+        height: 439px;
         margin-top: 120px;
     }
 
@@ -1550,6 +1621,7 @@
         padding-left: 30px;
         padding-right: 30px;
         padding-top: 15px;
+        position: relative;
     }
 
     .subtitle_lable {
@@ -1565,9 +1637,9 @@
     }
 
     .button_departure {
-        height: 40px;
+        height: 30px;
         margin-top: 20px;
-        margin-left: 93px;
+        margin-left: 117px;
         font-size: 12px;
     }
 
@@ -1585,10 +1657,6 @@
         height: 820px;
     }
 
-    .repair_styles-text {
-        margin-left: 50px;
-    }
-
     .repair_styles-text .subtitle_h2 {
         font-size: 18px;
     }
@@ -1600,7 +1668,6 @@
 
     .repair_styles-images {
         grid-template-columns: 198px 198px;
-        margin-right: 0px;
     }
 
     .img_clock {
@@ -1627,7 +1694,9 @@
         margin-top: -215px;
     }
 
-
+    .button_cont {
+        height: 30px;
+    }
 
     .about_clients {
         width: 720px;
@@ -1652,13 +1721,12 @@
 
     .about_clients p {
         width: 207px;
-        margin-left: 10px;
+        height: auto;
     }
 
     .client-data {
-        margin-top: 90px;
-        width: 234px;
-        height: 66px;
+        padding-top: 22px;
+        margin: 0 0 0 -12px;
     }
 
     .our_contacts {
@@ -1666,9 +1734,10 @@
     }
 
     .any_questions {
-        width: 700px;
+        width: 100%;
         padding-left: 100px;
         padding-right: 100px;
+        margin: 0;
     }
 
     .subtitle_h3-cont {
@@ -1677,8 +1746,8 @@
 
 
     .map {
-        width: 648px;
-        height: 326px;
+        width: 100%;
+        height: auto;
     }
 
 
@@ -1706,22 +1775,161 @@
     .contacts {
         font-size: 8px;
     }
-
-    .header-button {
-        width: 60px;
-        height: 40px;
-        font-size: 8px;
-        margin-left: 20px;
-    }
-
 }
 
 
-
-@media (min-width: 375px) and (max-width: 767px) {
-
+@media (min-width: 600px) and (max-width: 767px) {
     .container {
-        max-width: 375px;
+        width: 565px;
+    }
+
+    .slider__images {
+        height: 402px;
+    }
+
+    .subsubtitle_info {
+        padding-top: 4px;
+        grid-template-columns: 265px 265px;
+        grid-template-rows: 60px 60px;
+        grid-gap: 35px;
+        column-gap: 35px;
+    }
+    
+    .repair-overlay {
+        height: 300px;
+    }
+
+    .button_play {
+        top: 310px;
+    }
+
+    
+
+    .three_types {
+        margin-top: 40px;
+        display: grid;
+        grid-template-rows: 730px 730px 730px;
+        grid-template-columns: 565px;
+        row-gap: 59px;
+        width: 100%;
+        height: auto;
+    }
+
+    .our_contacts {
+        margin-top: -200px;
+    }
+
+    .any_questions {
+        padding-top: 253px;
+    }
+
+    
+}
+
+@media (min-width: 430px) and (max-width: 599px) {
+    .container {
+        width: 395px;
+    }
+
+    .slider__images {
+        height: 281px;
+    }
+
+    .subsubtitle_info {
+        grid-template-columns: 182px 182px;
+        grid-template-rows: 66px 44px;
+        grid-column-gap: 31px;
+        grid-row-gap: 27px;
+    }
+    
+    .repair-overlay {
+        height: 210px;
+    }
+
+    .button_play {
+        top: 260px;
+    }
+
+    .form_online-control {
+        height: auto;
+    }
+
+    .first-checkbox {
+        top: -50px;
+    }
+
+    .three_types {
+        margin-top: 40px;
+        display: grid;
+        grid-template-rows: 550px 550px 550px;
+        grid-template-columns: 395px;
+        row-gap: 59px;
+        width: 100%;
+        height: auto;
+    }
+
+    .our_contacts {
+        margin-top: -140px;
+    }
+
+    .any_questions {
+        padding-top: 203px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 429px) {
+    .container {
+        width: 285px;
+    }
+
+    .slider__images {
+        height: 203px;
+    }
+
+    .subsubtitle_info {
+        grid-template-columns: 129px 129px;
+        grid-template-rows: 66px 44px;
+        grid-column-gap: 31px;
+        grid-row-gap: 27px;
+    }
+
+    .repair-overlay {
+        height: 152px;
+    }
+
+    .button_play {
+        top: 235px;
+    }
+
+    .form_online-control {
+        height: 311px;
+    }
+
+    .first-checkbox {
+        top: -105px;
+    }
+
+    .three_types {
+        margin-top: 40px;
+        display: grid;
+        grid-template-rows: 431px 431px 431px;
+        row-gap: 59px;
+        width: 100%;
+        height: auto;
+    }
+
+    .our_contacts {
+        margin-top: -100px;
+    }
+
+    .any_questions {
+        padding-top: 140px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .logo {
+        margin: 0;
     }
 
     .header-content {
@@ -1735,6 +1943,7 @@
     .contacts {
         text-decoration: none;
         color: #FFFFFF;
+        flex: 1;
     }
 
     .header-button {
@@ -1747,11 +1956,10 @@
 
     .hero-content {
         padding-top: 85px;
-        padding-left: 18px;
     }
 
     .title {
-        font-size: 23px;
+        font-size: 22px;
         line-height: 31px;
     }
 
@@ -1762,7 +1970,7 @@
     }
 
     .hero-button_left {
-        width: 338.61px;
+        width: 100%;
         margin-top: 50px;
     }
 
@@ -1772,7 +1980,7 @@
 
     .hero-button_right2 {
         display: block;
-        width: 338.61px;
+        width: 100%;
         margin-top: 26px;
         height: 51px;
         border: 1px solid #FFFFFF;
@@ -1785,45 +1993,60 @@
 
 
     .completed_projects {
-        height: 664px;
+        height: auto;
+    }
+
+    .cp-content {
+        display: flex;
+        flex-direction: column;
     }
 
     .titles {
         display: none;
     }
 
-    .about_pj1 {
-        display: block;
-        padding-top: 36px;
-        padding-left: 18px;
-        padding-right: 18px;
-        text-align: center;
-    }
-
-    .about_pj1 .subtitle_h2 {
+    .subtitle_h2 {
         font-size: 22px;
         line-height: 30px;
+    }
+
+    .cp_text {
+        order: 1;
+        padding-top: 36px; 
+    }
+
+    .imgs {
+        order: 2;
+        margin: 0;
+        position: relative;
+    }
+
+    .subsubtitle_info {
+        order: 3;
+        padding-top: 36px;
+    }
+
+    .subtitle_pj1 {
+        margin: 0 auto;
+        text-align: center;
     }
 
     .text_pj1 {
         font-size: 11px;
         line-height: 17px;
-        margin-top: 22px;
-        width: 311px;
-    }
-
-    .completed_pj_mob {
-        display: block;
-        margin-top: 36px;
-        width: 340px;
-        height: 241.35px;
+        padding-top: 22px;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 50px;
     }
 
     .arrows_cp {
         display: flex;
-        width: 313px;
-        position: relative;
-        top: -138px;
+        width: 92%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .button_arrow_cp {
@@ -1844,13 +2067,7 @@
         margin-right: 0;
     }
 
-    .subsubtitle_info {
-        grid-template-columns: 129px 181px;
-        grid-template-rows: 66px 44px;
-        grid-column-gap: 31px;
-        grid-row-gap: 27px;
-        padding-top: 4px;
-    }
+    
 
     .subsubtitle {
         font-size: 14px;
@@ -1868,8 +2085,11 @@
     }
 
     .slider__images {
-        display: none;
+        width: 100%;
+        position: relative;
+        top: 0;
     }
+    
 
     .slider__arrows {
         display: none;
@@ -1879,7 +2099,7 @@
 
     .online_control {
         background-color: #131313;
-        height: 880px;
+        height: auto;
     }
 
     .online_control-content {
@@ -1888,24 +2108,21 @@
     }
 
     .camera {
-        margin-top: 58px;
         width: 210px;
         height: 74px;
     }
 
     .repair {
-        height: 207px;
-        width: 340px;
-        margin-top: 40px;
+        height: auto;
+        width: 100%;
     }
 
     .repair-overlay {
-        top: 176px;
+        top: 174px;
         left: 0;
         right: 0;
         bottom: 0;
-        height: 207px;
-        width: 340px;
+        width: 100%;
     }
 
     .button_play {
@@ -1926,8 +2143,8 @@
     .p_online_control {
         line-height: 19px;
         margin-top: 21px;
-        width: 340px;
-        height: 107px;
+        width: 100%;
+        height: auto;
     }
 
     .p {
@@ -1939,51 +2156,54 @@
         display: flex;
         flex-direction: column;
         margin-top: 61px;
-        width: 340px;
-        height: 311px;
+        width: 100%;
         justify-content: start;
-        margin-top: 0;
+        margin-top: 61px;
+        height: 285px;
+        position: relative;
+    }
+
+    .without_checkbox {
+        flex-direction: column;
+        height: auto;
     }
 
     .title_lable-online-control {
         color: rgba(255, 255, 255, 0.5);
-        padding-top: 61px;
+        padding-bottom: 63px;
     }
 
     .subtitle_lable-online-control {
         line-height: 19px;
         color: #FFFFFF;
-        width: 340px;
+        width: 100%;
         margin: 0;
         border-color: #FFFFFF;
     }
 
     .input_oc {
-        width: 192px;
+        width: 150px;
         background-color: #131313;
     }
 
     .button_online-control {
-        width: 340px;
+        width: 100%;
         box-shadow: 0px 10px 20px rgba(227, 184, 115, 0.1);
         position: relative;
-        top: 93px;
+        top: 40px;
+        height: 51px;
     }
 
     .first-checkbox {
-        position: relative;
-        top: -105px;
-        left: -30px;
+        position: absolute;
+        top: 150px;
     }
 
     .text_checkbox-oc {
         color: #FFFFFF;
+        font-size: 13px;
     }
 
-
-    .TYPES_OF_REPAIR {
-        height: 1819px;
-    }
 
     .subtitle_h3-TOR {
         margin-top: 83px;
@@ -1998,17 +2218,11 @@
         padding-top: 17px;
     }
 
-    .three_types {
-        margin-top: 40px;
-        display: grid;
-        grid-template-rows: 490px 490px 490px;
-        row-gap: 59px;
-        width: 340px;
-    }
+    
 
     .three_types img {
-        width: 340px;
-        height: 365.15px;
+        width: 100%;
+        height: auto;
         margin: 0;
     }
 
@@ -2018,7 +2232,7 @@
         height: 241px;
         position: relative;
         top: -142px;
-        left: -35px;
+        margin: 0;
     }
 
     .about_type h4 {
@@ -2053,7 +2267,7 @@
 
     .repair_styles {
         background-image: none;
-        height: 365px;
+        height: auto;
     }
 
     .repair_styles-overlay {
@@ -2069,8 +2283,8 @@
     }
 
     .repair_styles-text {
-        margin-top: 30px;
-        margin-left: 75px;
+        padding-top: 55px;
+        padding-bottom: 32px;
     }
 
     .repair_styles-text .subtitle_h2 {
@@ -2083,20 +2297,20 @@
         display: none;
     }
 
+    .repair_styles-images_container {
+        position: relative;
+        width: 100%;
+        display: block;
+        height: auto;
+    }
+
     .repair_styles-images {
         display: none;
     }
 
     .img_clock-big {
-        display: block;
-        width: 340px;
-        height: 242px;
-        margin-top: 32px;
+        width: 100%;
     }
-
-
-
-
 
 
     .clients {
@@ -2104,13 +2318,10 @@
     }
 
 
-
-
     .our_contacts {
         background-image: none;
         background-color: #131313;
-        height: 1204px;
-        margin-top: -110px;
+        height: auto;
     }
 
     .our_contacts-content {
@@ -2119,11 +2330,10 @@
 
     .any_questions {
         background: none;
-        width: 340px;
-        height: 690px;
+        width: 100%;
+        height: auto;
         padding-left: 0px;
         padding-right: 0px;
-        padding-top: 173px;
     }
 
     .subtitle_h3-cont {
@@ -2143,12 +2353,12 @@
     }
 
     .input-cont-name-phone {
-        width: 210px;
+        width: 150px;
         background-color: #131313;
     }
 
     .input-cont-question {
-        width: 230px;
+        width: 150px;
         background-color: #131313;
     }
 
@@ -2162,13 +2372,13 @@
     }
 
     .button_cont {
-        width: 340px;
+        width: 100%;
         box-shadow: 0px 10px 20px rgba(227, 184, 115, 0.1);
     }
 
     .subtitle_h3-address {
         margin-top: 34px;
-        width: 310px;
+        width: 100%;
         height: 70.56px;
         order: 2;
     }
@@ -2176,6 +2386,7 @@
     .subtitle_h3 {
         font-size: 18px;
         line-height: 25px;
+        height: auto;
     }
 
     .icons_button-address {
@@ -2198,6 +2409,8 @@
 
     .map_mob {
         display: block;
+        width: 100%;
+        height: auto;
         order: 1;
         margin-top: 43px;
     }
@@ -2212,4 +2425,7 @@
         display: none;
     }
 
+    .title_lable-cont {
+        width: 100%;
+    }
 }

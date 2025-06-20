@@ -21,7 +21,7 @@ let images = [{
   name: "Rostov-on-Don Patriotic"
 }];
 
-function initSlider() { /* отвечает за начальное представление слайдера, чтобы у нас загрузились картинки */
+function initSlider() {
   if (!images || !images.length) return;
 
   let sliderImages = document.querySelector(".slider__images");
@@ -33,11 +33,11 @@ function initSlider() { /* отвечает за начальное предст
   let title4 = document.querySelector(".value4");
   let nameObj = document.querySelector(".titles");
 
-  initImages(); /* Функция, которая разбирает массив с изображениями, создает элементы и записывает их в нужный div */
-  initArrows(); /* Функция, которая вешает обработчики событий на стрелки */
-  initDots(); /* Функция, которая вешает обработчики событий на точки */
-  initTitles(); /* Функция, которая добавляет текстовое описание объектов */
-  initNames(); /* Функция, которая добавляет наименование объектов над картинками + обработчик клика на одно из названий*/
+  initImages();
+  initArrows();
+  initDots();
+  initTitles();
+  initNames();
 
   function initImages() {
     images.forEach((image, index) => {
@@ -47,8 +47,9 @@ function initSlider() { /* отвечает за начальное предст
   }
 
   function initArrows() {
+    // Стрелки для десктопной версии
     sliderArrows.querySelectorAll(".slider__arrow").forEach(arrow => {
-      arrow.addEventListener("click", function () {
+      arrow.addEventListener("click", function() {
         let curNumber = +sliderImages.querySelector(".active").dataset.index;
         let nextNumber;
         if (arrow.classList.contains("left")) {
@@ -59,7 +60,27 @@ function initSlider() { /* отвечает за начальное предст
         moveSlider(nextNumber);
       });
     });
+
+    // Стрелки для мобильной версии
+    document.querySelectorAll('.button_arrow1_cp, .button_arrow2_cp, .button_arrow1_c1, .button_arrow2_c1').forEach(arrow => {
+      arrow.addEventListener('click', function() {
+        const currentIndex = +sliderImages.querySelector('.active').dataset.index;
+        let nextIndex;
+        
+        if (this.classList.contains('button_arrow1_cp') || this.classList.contains('button_arrow1_c1')) {
+          // Левая стрелка - предыдущий слайд
+          nextIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+        } else {
+          // Правая стрелка - следующий слайд
+          nextIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+        }
+        
+        moveSlider(nextIndex);
+      });
+    });
   }
+
+  
 
   function initDots() {
     images.forEach((image, index) => {
@@ -68,10 +89,8 @@ function initSlider() { /* отвечает за начальное предст
     });
 
     sliderDots.querySelectorAll(".slider__dots-item").forEach(dot => {
-      dot.addEventListener("click", function () {
+      dot.addEventListener("click", function() {
         moveSlider(this.dataset.index);
-        sliderDots.querySelector(".active").classList.remove("active");
-        this.classList.add("active");
       })
     })
   }
@@ -116,13 +135,67 @@ function initSlider() { /* отвечает за начальное предст
     });
 
     nameObj.querySelectorAll(".title_ob").forEach(nameSlider => {
-      nameSlider.addEventListener("click", function () {
+      nameSlider.addEventListener("click", function() {
         moveSlider(this.dataset.index);
-        nameObj.querySelector(".active").classList.remove("active");
-        this.classList.add("active");
       })
     })
   }
 }
 
-document.addEventListener("DOMContentLoaded", initSlider);
+document.addEventListener("DOMContentLoaded", function() {
+  // Инициализация слайдера
+  initSlider();
+
+  // Прозрачность хедера при скролле
+  const header = document.getElementById('header');
+  const scrollThreshold = 100;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > scrollThreshold) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  // Базовая маска для телефона
+  document.querySelectorAll('input[type="tel"]').forEach(input => {
+    input.addEventListener('input', function(e) {
+      let value = this.value.replace(/\D/g, '');
+      if (value.length > 0) {
+        value = '+7 (' + value.substring(1, 4) + ') ' + 
+                value.substring(4, 7) + '-' + 
+                value.substring(7, 9) + '-' + 
+                value.substring(9, 11);
+      }
+      this.value = value;
+    });
+  });
+
+  // Обработчики отправки форм
+  document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Проверка обязательных полей
+      const requiredInputs = Array.from(form.querySelectorAll('[required]'));
+      const isValid = requiredInputs.every(input => {
+        if (input.type === 'checkbox') return input.checked;
+        return input.value.trim() !== '';
+      });
+
+      if (isValid) {
+        // Если форма в модальном окне
+        if (form.closest('.modal')) {
+          hideModals();
+          showModal('sentModal');
+        } else {
+          alert('Thank you! Your request has been submitted.');
+          form.reset();
+        }
+      } else {
+        alert('Please fill in all required fields');
+      }
+    });
+  });
+});

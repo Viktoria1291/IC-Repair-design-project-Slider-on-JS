@@ -6,31 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/styles.css" rel="stylesheet" type="text/css">
-
     <title>Document</title>
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="container header-content">
-            <span class="logo">IC "Repair Design Project"</span>
-            <nav>
-                <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">PROJECTS</a></li>
-                    <li><a href="#">MEASUREMENT</a></li>
-                    <li><a href="#">TEAM</a></li>
-                    <li><a href="#">REVIEWS</a></li>
-                    <li><a href="#">CONTACTS</a></li>
-                </ul>
+            <a href="index.html" class="logo">IC "Repair Design Project"</a>
+            <nav class="nav-links">
+                <a href="index.html">HOME</a>
+                <a href="#projects">PROJECTS</a>
+                <a href="#types">TYPES OF REPAIR</a>
+                <a href="#measurement">MEASUREMENT</a>
+                <a href="#fantasies">YOUR FANTASIES</a>
+                <a href="#clients">OUR CLIENTS</a>
+                <a href="#contacts">CONTACTS</a>
             </nav>
             <span class="contacts">+7 (928) 768-32-39</span>
-            <button class="button header-button">Request a call</button>
+            <a>
+                <button class="button header-button">Request a call</button>
+            </a>
         </div>
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero" id="hero">
             <div class="container hero-content">
                 <h1 class="title">
                     <font color="#FFFFFF">Turnkey Repair in the <br>city of </font>
@@ -40,76 +40,79 @@
                     Get ready-made turnkey repairs on time <br>with work time saving up to 45 days and 20% from <br>cost
                     of materials due to the organization of work
                 </p>
-                <button class="button hero-button_left">
-                    CALCULATE THE COST
-                </button>
-                <button class="button hero-button_right1">
-                    SUBMIT YOUR APPLICATION
-                </button>
-                <button class="button hero-button_right2">
-                    APPLICATION
-                </button>
+                <a>
+                    <button class="button hero-button_left">
+                        CALCULATE THE COST
+                    </button>
+                </a>
+                <a>
+                    <button class="button hero-button_right1">
+                        SUBMIT YOUR APPLICATION
+                    </button>
+                </a>
+                <a>
+                    <button class="button hero-button_right2">
+                        APPLICATION
+                    </button>
+                </a>
             </div>
             <div class="hero-overlay"></div>
         </section>
 
-        <section class="completed_projects">
-            <div class="container">
+        <section class="completed_projects" id="projects">
+            <div class="container cp-content">
                 <div class="titles"></div>
-
-                <div class="about_pj1">
-
-                    <div class="about">
-                        <h2 class="subtitle_h2 subtitle_pj1">
-                            Completed <br>projects
-                        </h2>
-                        <p class="text_pj1">
-                            Only a small part of the work performed by our company is presented on the site. For 14
-                            years on in the construction market we have made happy more than 1000 families
-                        </p>
-                        <img class="completed_pj_mob" src="images/completed_pj_mob.png">
-                        <div class="arrows_cp">
-                            <button class="button_arrow_cp button_arrow1_cp">
-                                <img src="images/arrow1_cp.svg" alt="arrow1">
-                            </button>
-                            <button class="button_arrow_cp button_arrow2_cp">
-                                <img src="images/arrow2_cp.svg" alt="arrow2">
-                            </button>
-                        </div>
-                        <div class="subsubtitle_info">
-                            <div>
-                                <h3 class="subsubtitle">City:</h3>
-                                <span class="value value1"></span>
-                            </div>
-                            <div>
-                                <h3 class="subsubtitle">apartment area:</h3>
-                                <span class="value value2"></span>
-                            </div>
-                            <div>
-                                <h3 class="subsubtitle">Repair time:</h3>
-                                <span class="value value3"></span>
-                            </div>
-                            <div>
-                                <h3 class="subsubtitle">Repair Cost:</h3>
-                                <span class="value value4"></span>
-                            </div>
-                        </div>
-                        <div class="slider__arrows">
-                            <img class="slider__arrow left" src="images/arrows1_left.png">
-                            <div class="slider__dots"></div>
-                            <img class="slider__arrow right" src="images/arrows1_right.png">
-                        </div>
+                <div class="cp_text">
+                    <h2 class="subtitle_h2 subtitle_pj1">
+                        Completed <br>projects
+                    </h2>
+                    <p class="text_pj1">
+                        Only a small part of the work performed by our company is presented on the site. For 14
+                        years on in the construction market we have made happy more than 1000 families
+                    </p>
+                </div>
+                <div class="subsubtitle_info">
+                    <div>
+                        <h3 class="subsubtitle">City:</h3>
+                        <span class="value value1"></span>
                     </div>
+                    <div>
+                        <h3 class="subsubtitle">apartment area:</h3>
+                        <span class="value value2"></span>
+                    </div>
+                    <div>
+                        <h3 class="subsubtitle">Repair time:</h3>
+                        <span class="value value3"></span>
+                    </div>
+                    <div>
+                        <h3 class="subsubtitle">Repair Cost:</h3>
+                        <span class="value value4"></span>
+                    </div>
+                </div>
+                <div class="imgs">
                     <div class="slider__images"></div>
+                    <div class="slider__arrows">
+                        <img class="slider__arrow left" src="images/arrows1_left.png">
+                        <div class="slider__dots"></div>
+                        <img class="slider__arrow right" src="images/arrows1_right.png">
+                    </div>
+                    <div class="arrows_cp">
+                        <button class="button_arrow_cp button_arrow1_cp">
+                            <img src="images/arrow1_cp.svg" alt="arrow1">
+                        </button>
+                        <button class="button_arrow_cp button_arrow2_cp">
+                            <img src="images/arrow2_cp.svg" alt="arrow2">
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
         <section class="online_control">
             <div class="container online_control-content">
 
-                <div>
-                    <img class="camera" src="images/camera.svg">
-                </div>
+                <h3 class="subtitle_h3 subtitle_h3-OC">ONLINE CONTROL</h3>
+
+                <img class="camera" src="images/camera.svg">
 
                 <div>
                     <img class="repair" src="images/repair.jpg">
@@ -131,36 +134,36 @@
                 </p>
 
                 <form action=" " class="form_online-control">
-                    <label class="title_lable title_lable-online-control">Name
-                        <p class="subtitle_lable subtitle_lable-online-control">What is your name:
-                            <input class="input input_oc" type="text">
-                        </p>
-                    </label>
+                    <div class="without_checkbox">
+                        <label class="title_lable title_lable-online-control">Name
+                            <p class="subtitle_lable subtitle_lable-online-control">
+                                <input class="input input_oc" type="text" placeholder="What is your name:" required>
+                            </p>
+                        </label>
 
-                    <label class="title_lable title_lable-online-control">Phone
-                        <p class="subtitle_lable subtitle_lable-online-control">Your phone number:
-                            <input class="input input_oc" type="tel">
-                        </p>
-                    </label>
+                        <label class="title_lable title_lable-online-control">Phone
+                            <p class="subtitle_lable subtitle_lable-online-control">
+                                <input class="input input_oc" type="tel" placeholder="Your phone number:" required>
+                            </p>
+                        </label>
+                        <button class="button button_online-control" type="submit">
+                            Submit
+                        </button>
+                    </div>
 
-                    <button class="button button_online-control">
-                        Submit
-                    </button>
-
+                    <div class="first-checkbox">
+                        <label class="label">
+                            <input type="checkbox" class="checkbox" required>
+                            <span class="fake"></span>
+                            <span class="text_checkbox text_checkbox-oc">I agree to the processing of personal
+                                data</span>
+                        </label>
+                    </div>
                 </form>
-
-                <div class="first-checkbox">
-                    <label class="label">
-                        <input type="checkbox" class="checkbox">
-                        <span class="fake"></span>
-                        <span class="text_checkbox text_checkbox-oc">I agree to the processing of personal data</span>
-                    </label>
-                </div>
-
             </div>
         </section>
 
-        <section class="TYPES_OF_REPAIR">
+        <section class="TYPES_OF_REPAIR" id="types">
             <div class="container TYPES_OF_REPAIR-content">
 
                 <h3 class="subtitle_h3 subtitle_h3-TOR">TYPES OF REPAIR</h3>
@@ -168,52 +171,52 @@
                 <img class="tools" src="images/tools.svg">
 
                 <div class="three_types">
-                    <div>
+                    <div class="card">
                         <img src="images/Redecorating.jpg">
                         <div class="about_type">
                             <h4>Redecorating</h4>
                             <ul class="about_repair">
-                                <li>• Dismantling of old coatings</li>
-                                <li>• Wallpapering</li>
-                                <li>• Painting walls and ceilings</li>
-                                <li>• Laying flooring</li>
-                                <li>• Replacing plumbing</li>
-                                <li>• Replacing sockets and switches</li>
-                                <li>• Replacing doors</li>
+                                <li>Dismantling of old coatings</li>
+                                <li>Wallpapering</li>
+                                <li>Painting walls and ceilings</li>
+                                <li>Laying flooring</li>
+                                <li>Replacing plumbing</li>
+                                <li>Replacing sockets and switches</li>
+                                <li>Replacing doors</li>
                             </ul>
                             <div class="cost">from 900 rub / m2</div>
                         </div>
                     </div>
 
-                    <div>
+                    <div class="card">
                         <img src="images/Overhaul.jpg">
                         <div class="about_type">
                             <h4>Overhaul</h4>
                             <ul class="about_repair">
-                                <li>• Dismantling of old coatings</li>
-                                <li>• Wallpapering</li>
-                                <li>• Painting walls and ceilings</li>
-                                <li>• Laying flooring</li>
-                                <li>• Replacing plumbing</li>
-                                <li>• Replacing sockets and switches</li>
-                                <li>• Replacing doors</li>
+                                <li>Dismantling of old coatings</li>
+                                <li>Wallpapering</li>
+                                <li>Painting walls and ceilings</li>
+                                <li>Laying flooring</li>
+                                <li>Replacing plumbing</li>
+                                <li>Replacing sockets and switches</li>
+                                <li>Replacing doors</li>
                             </ul>
                             <div class="cost">from 1800 rub / m2</div>
                         </div>
                     </div>
 
-                    <div>
+                    <div class="card">
                         <img src="images/Designer_Repair.jpg">
                         <div class="about_type">
                             <h4>Designer Repair</h4>
                             <ul class="about_repair">
-                                <li>• Dismantling of old coatings</li>
-                                <li>• Wallpapering</li>
-                                <li>• Painting walls and ceilings</li>
-                                <li>• Laying flooring</li>
-                                <li>• Replacing plumbing</li>
-                                <li>• Replacing sockets and switches</li>
-                                <li>• Replacing doors</li>
+                                <li>Dismantling of old coatings</li>
+                                <li>Wallpapering</li>
+                                <li>Painting walls and ceilings</li>
+                                <li>Laying flooring</li>
+                                <li>Replacing plumbing</li>
+                                <li>Replacing sockets and switches</li>
+                                <li>Replacing doors</li>
                             </ul>
                             <div class="cost">from 4000 rub / m2</div>
                         </div>
@@ -222,7 +225,7 @@
             </div>
         </section>
 
-        <section class="measuring">
+        <section class="measuring" id="measurement">
             <div class="container measuring-content">
                 <div class="about_measuring">
                     <div class="all_steps">
@@ -266,40 +269,38 @@
 
                 <div class="form_departure">
                     <form action=" " class="form_Call_the_measurer">
-                        <p class="form-title_departure">Leave a request for free<br>
-                            departure of the measurer</p>
+                        <p class="form-title_departure">Leave a request for free departure of the measurer</p>
                         <label class="title_lable title_lable-departure">Name
-                            <p class="subtitle_lable subtitle_lable-departure">What is your name:
-                                <input class="input input_dep" type="text">
+                            <p class="subtitle_lable subtitle_lable-departure">
+                                <input class="input input_dep" type="text" placeholder="What is your name:" required>
                             </p>
                         </label>
 
                         <label class="title_lable title_lable-departure">Phone
-                            <p class="subtitle_lable subtitle_lable-departure">Your phone number:
-                                <input class="input input_dep" type="tel">
+                            <p class="subtitle_lable subtitle_lable-departure">
+                                <input class="input input_dep" type="tel" placeholder="Your phone number:" required>
                             </p>
                         </label>
 
                         <label class="title_lable title_lable-departure">Email
-                            <p class="subtitle_lable subtitle_lable-departure">Your email
-                                <input class="input input_dep" type="email">
+                            <p class="subtitle_lable subtitle_lable-departure">
+                                <input class="input input_dep" type="email" placeholder="Your email:" required>
                             </p>
                         </label>
 
                         <div class="checkbox-dep">
                             <label class="label">
-                                <input type="checkbox" class="checkbox">
+                                <input type="checkbox" class="checkbox" required>
                                 <span class="fake"></span>
                                 <span class="text_checkbox text_checkbox-dep">I agree to the processing of personal
                                     data</span>
                             </label>
                         </div>
 
-                        <button class="button button_departure">
+                        <button class="button button_departure" type="submit">
                             Call the measurer
                         </button>
                     </form>
-
                     <div class="piggy">
                         <img src="images/piggy.svg" alt="piggy">
                         <div>Help save 10 - 20% of the<br>
@@ -309,7 +310,7 @@
             </div>
         </section>
 
-        <section class="repair_styles">
+        <section class="repair_styles" id="fantasies">
             <div class="container repair_styles-content">
                 <div class="repair_styles-text">
                     <h2 class="subtitle_h2">We realize your<br>
@@ -328,28 +329,22 @@
                         <li><a href="#">Eclecticism</a></li>
                     </ul>
                 </div>
+
                 <div class="repair_styles-images">
                     <img src="images/clock.png" alt="clock" class="img_clock">
                     <img src="images/sofa.png" alt="sofa" class="img_sofa">
                     <img src="images/tv.png" alt="tv" class="img_tv">
                     <img src="images/flower.png" alt="flower" class="img_flower">
                 </div>
-                <div>
+
+                <div class="repair_styles-images_container">
                     <img src="images/clock-big.png" alt="clock-big" class="img_clock-big">
                 </div>
-                <div class="arrows_cp">
-                    <button class="button_arrow_cp button_arrow1_cp">
-                        <img src="images/arrow1_cp.svg" alt="arrow1">
-                    </button>
-                    <button class="button_arrow_cp button_arrow2_cp">
-                        <img src="images/arrow2_cp.svg" alt="arrow2">
-                    </button>
-                </div>
+                <div class="repair_styles-overlay"></div>
             </div>
-            <div class="repair_styles-overlay"></div>
         </section>
 
-        <section class="clients">
+        <section class="clients" id="clients">
             <div class="container clients-content">
                 <h3 class="subtitle_h3 subtitle_h3-clients">our clients</h3>
                 <img src="images/hands.svg" alt="hands" class="hands">
@@ -413,33 +408,35 @@
             </div>
         </section>
 
-        <section class="our_contacts">
+        <section class="our_contacts" id="contacts">
             <div class="container our_contacts-content">
                 <form action="" class="any_questions">
                     <h3 class="subtitle_h3 subtitle_h3-cont">have any questions?</h3>
                     <div class="form-cont_name_phone">
                         <label class="title_lable title_lable-cont">Name
-                            <p class="subtitle_lable subtitle_lable-cont">What is your name:
-                                <input class="input input-cont-name-phone" type="text">
+                            <p class="subtitle_lable subtitle_lable-cont">
+                                <input class="input input-cont-name-phone" type="text" placeholder="What is your name:"
+                                    required>
                             </p>
                         </label>
 
                         <label class="title_lable title_lable-cont">Phone
-                            <p class="subtitle_lable subtitle_lable-cont">Your phone number:
-                                <input class="input input-cont-name-phone" type="tel">
+                            <p class="subtitle_lable subtitle_lable-cont">
+                                <input class="input input-cont-name-phone" type="tel" placeholder="Your phone number:"
+                                    required>
                             </p>
                         </label>
                     </div>
 
                     <label class="title_lable title_lable-cont">Question
-                        <p class="subtitle_lable subtitle_lable-cont">I want to know:
-                            <input class="input input-cont-question" type="text">
+                        <p class="subtitle_lable subtitle_lable-cont">
+                            <input class="input input-cont-question" type="text" placeholder="I want to know:" required>
                         </p>
                     </label>
 
                     <div class="checkbox-cont">
                         <label class="label">
-                            <input type="checkbox" class="checkbox">
+                            <input type="checkbox" class="checkbox" required>
                             <span class="fake"></span>
                             <span class="text_checkbox text_checkbox-cont">I agree to the processing of personal
                                 data</span>
@@ -447,7 +444,7 @@
                     </div>
 
                     <div class="button_cont-position">
-                        <button class="button button_cont">
+                        <button class="button button_cont" type="submit">
                             Submit
                         </button>
                     </div>
@@ -474,19 +471,20 @@
 
     <footer class="footer">
         <div class="container footer-content">
-            <span class="logo">IC "Repair Design Project"</span>
-            <nav>
-                <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">PROJECTS</a></li>
-                    <li><a href="#">MEASUREMENT</a></li>
-                    <li><a href="#">TEAM</a></li>
-                    <li><a href="#">REVIEWS</a></li>
-                    <li><a href="#">CONTACTS</a></li>
-                </ul>
+            <a href="index.html" class="logo">IC "Repair Design Project"</a>
+            <nav class="nav-links">
+                <a href="index.html">HOME</a>
+                <a href="#projects">PROJECTS</a>
+                <a href="#types">TYPES OF REPAIR</a>
+                <a href="#measurement">MEASUREMENT</a>
+                <a href="#fantasies">YOUR FANTASIES</a>
+                <a href="#clients">OUR CLIENTS</a>
+                <a href="#contacts">CONTACTS</a>
             </nav>
             <span class="contacts">+7 (928) 768-32-39</span>
-            <button class="button header-button">Request a call</button>
+            <a>
+                <button class="button header-button">Request a call</button>
+            </a>
         </div>
     </footer>
     <script src="script/index.js"></script>
